@@ -1,0 +1,26 @@
+[
+  {
+    "id": "abril-club-de-campo",
+    "title": "Abril Club de Campo",
+    "subtitle": "Casa · 4 dorm · 395 m²",
+    "price": "USD 1.200.000",
+    "image": "https://images.unsplash.com/photo-1613977257365-aaae5a9817ff?auto=format&fit=crop&w=1000&q=70",
+    "url": "#"
+  },
+  {
+    "id": "country-el-carmen",
+    "title": "Country El Carmen",
+    "subtitle": "Casa · 4 dorm · 300 m²",
+    "price": "USD 495.000",
+    "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=70",
+    "url": "#"
+  },
+  {
+    "id": "greenville-polo-resort",
+    "title": "Greenville Polo & Resort",
+    "subtitle": "Terreno · 767 m²",
+    "price": "USD 135.000",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=70",
+    "url": "#"
+  }
+]

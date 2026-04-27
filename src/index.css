@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────
+   Design tokens — Tailwind v4 expone estos como utilidades:
+   --color-bg → bg-bg / text-bg / border-bg
+   --font-serif → font-serif
+   --font-sans → font-sans (default)
+   ───────────────────────────────────────────────────────── */
+@theme {
+  --color-bg: #f4f4f2;
+  --color-surface: #ffffff;
+  --color-ink: #1b1d1e;
+  --color-ink-soft: #3b3d3f;
+  --color-soft: #6a6f73;
+  --color-line: #e4e4e0;
+  --color-accent: #61777b;
+  --color-accent-ink: #ffffff;
+  --color-dark: #1f2426;
+
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* Reset/base */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+
+img { display: block; max-width: 100%; }
+
+/* Scroll suave para los anchors del nav */
+html { scroll-behavior: smooth; }
