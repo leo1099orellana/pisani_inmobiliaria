@@ -64,7 +64,6 @@ export default function Properties() {
           {site.properties.title}
         </h2>
 
-        {/* Card principal grande */}
         <div className="relative">
           <div className="group relative block rounded-2xl md:rounded-3xl overflow-hidden aspect-[16/9] bg-line shadow-2xl">
             <img
@@ -80,7 +79,6 @@ export default function Properties() {
               {active + 1} / {slides.length}
             </div>
 
-            {/* Bloque de info: título + subtítulo + botones de portales */}
             <div className="absolute left-7 right-7 md:left-10 md:right-10 bottom-7 md:bottom-10 text-white">
               <div className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-[-0.01em] leading-tight mb-2">
                 {current.title}
@@ -89,19 +87,19 @@ export default function Properties() {
                 {current.subtitle}
               </div>
 
-              {/* Botones de portales — versión suave */}
-              <div className="flex flex-col sm:flex-row gap-2 md:gap-3">
+              <div className="flex flex-row gap-2 max-w-full">
                 <a
                   href={site.contact.argenpropUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center sm:justify-start gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-[#c2613f] text-white text-[12px] sm:text-[13px] font-medium hover:bg-[#a8512f] transition-colors cursor-pointer w-full sm:w-auto"
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 px-2 py-2 sm:px-5 sm:py-3 rounded-full bg-[#c2613f] text-white text-[10px] sm:text-[13px] font-medium hover:bg-[#a8512f] transition-colors cursor-pointer whitespace-nowrap"
                 >
-                  <span className="w-5 h-5 sm:w-6 sm:h-6 rounded bg-white/20 grid place-items-center font-bold text-[10px] sm:text-[11px]">
+                  <span className="w-4 h-4 sm:w-6 sm:h-6 rounded bg-white/20 grid place-items-center font-bold text-[9px] sm:text-[11px] shrink-0">
                     A
                   </span>
-                  Ver en Argenprop
+                  Argenprop
                   <svg
+                    className="hidden sm:block"
                     width="12"
                     height="12"
                     viewBox="0 0 24 24"
@@ -117,13 +115,14 @@ export default function Properties() {
                   href={site.contact.zonapropUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center sm:justify-start gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-[#d4a73a] text-white text-[12px] sm:text-[13px] font-medium hover:bg-[#b8902f] transition-colors cursor-pointer w-full sm:w-auto"
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 px-2 py-2 sm:px-5 sm:py-3 rounded-full bg-[#d4a73a] text-white text-[10px] sm:text-[13px] font-medium hover:bg-[#b8902f] transition-colors cursor-pointer whitespace-nowrap"
                 >
-                  <span className="w-5 h-5 sm:w-6 sm:h-6 rounded bg-white/20 grid place-items-center font-bold text-[10px] sm:text-[11px]">
+                  <span className="w-4 h-4 sm:w-6 sm:h-6 rounded bg-white/20 grid place-items-center font-bold text-[9px] sm:text-[11px] shrink-0">
                     Z
                   </span>
-                  Ver en Zonaprop
+                  Zonaprop
                   <svg
+                    className="hidden sm:block"
                     width="12"
                     height="12"
                     viewBox="0 0 24 24"
@@ -138,7 +137,6 @@ export default function Properties() {
             </div>
           </div>
 
-          {/* Flechas de navegación */}
           <button
             onClick={goToPrev}
             aria-label="Anterior"
@@ -173,7 +171,6 @@ export default function Properties() {
           </button>
         </div>
 
-        {/* Miniaturas debajo */}
         <div className="mt-5">
           <div className="grid grid-cols-5 gap-2 md:gap-3">
             {slides.map((s, i) => (
