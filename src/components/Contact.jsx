@@ -14,28 +14,45 @@ export default function Contact() {
             {site.contact_section.title[0]}<br />{site.contact_section.title[1]}
           </h2>
 
-          <div className="grid gap-5">
-            <ContactRow
-              label="Oficina"
-              value={site.contact.address}
-            />
-            <ContactRow
-              label="Teléfono"
-              value={site.contact.phone}
-              href={site.contact.whatsappUrl}
-              external
-            />
-            <ContactRow
-              label="Email"
-              value={site.contact.email}
-              href={`mailto:${site.contact.email}`}
-            />
-            <ContactRow
-              label="Instagram"
-              value={site.contact.instagram}
-              href={site.contact.instagramUrl}
-              external
-            />
+          {/* Equipo */}
+          <div className="mb-6">
+            <div className="text-xs text-soft tracking-[0.04em] mb-3">WhatsApp</div>
+            <div className="grid grid-cols-1 gap-3">
+              {site.about.team.map((member) => (
+                <TeamCard key={member.name} {...member} />
+              ))}
+            </div>
+          </div>
+
+          {/* Contacto directo: Email e Instagram con misma jerarquía visual que el equipo */}
+          <div className="mb-6">
+            <div className="text-xs text-soft tracking-[0.04em] mb-3">Email/Red Social</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <ContactCard
+                label="Email"
+                value={site.contact.email}
+                href={`mailto:${site.contact.email}`}
+                icon={
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="M2 4l10 8 10-8" />
+                  </svg>
+                }
+              />
+              <ContactCard
+                label="Instagram"
+                value={site.contact.instagram}
+                href={site.contact.instagramUrl}
+                external
+                icon={
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                }
+              />
+            </div>
           </div>
 
           <div className="mt-9">
@@ -57,26 +74,50 @@ export default function Contact() {
   )
 }
 
-function ContactRow({ label, value, href, external }) {
-  const isLink = Boolean(href)
+function TeamCard({ name, role, phone, wa, avatar }) {
   return (
-    <div className="grid grid-cols-[100px_1fr] gap-4 items-center border-b border-line pb-3.5">
-      <div className="text-xs text-soft tracking-[0.04em]">{label}</div>
-      {isLink ? (
-        
-         <a href={href}
-          target={external ? '_blank' : undefined}
-          rel={external ? 'noopener noreferrer' : undefined}
-          className="text-[15px] cursor-pointer hover:text-accent transition-colors"
+    <div className="bg-surface border border-line rounded-2xl p-4 flex items-center gap-3">
+      <div className="w-12 h-12 rounded-full overflow-hidden bg-line shrink-0">
+        <img src={avatar} alt={name} className="w-full h-full object-cover" />
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="text-[14px] font-medium leading-tight">{name}</div>
+        <div className="text-[12px] text-soft mt-0.5">{role}</div>
+        <a
+          href={wa}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[12.5px] text-accent hover:underline mt-1 inline-flex items-center gap-1.5 cursor-pointer"
         >
-          {value}
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.6 6.32A7.85 7.85 0 0012.05 4a7.94 7.94 0 00-6.88 11.89L4 20l4.22-1.11a7.93 7.93 0 003.83.97h.01A7.94 7.94 0 0020 11.93a7.85 7.85 0 00-2.4-5.61zM12.05 18.5h-.01a6.6 6.6 0 01-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 1112.21-3.5 6.6 6.6 0 01-6.61 6.59z" />
+          </svg>
+          {phone}
         </a>
-      ) : (
-        <div className="text-[15px]">{value}</div>
-      )}
+      </div>
     </div>
   )
 }
+
+function ContactCard({ label, value, href, external, icon }) {
+  return (
+    <a
+      href={href}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+      className="bg-surface border border-line rounded-2xl p-4 flex items-center gap-3 cursor-pointer hover:border-accent transition-colors group"
+    >
+      <div className="w-10 h-10 rounded-full bg-accent/10 text-accent grid place-items-center shrink-0 group-hover:bg-accent group-hover:text-white transition-colors">
+        {icon}
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="text-[11px] text-soft tracking-[0.04em] uppercase">{label}</div>
+        <div className="text-[14px] font-medium truncate group-hover:text-accent transition-colors">{value}</div>
+      </div>
+    </a>
+  )
+}
+
 function ContactForm() {
   const [form, setForm] = useState({
     nombre: '',
@@ -85,7 +126,7 @@ function ContactForm() {
     telefono: '',
     mensaje: '',
   })
-  const [status, setStatus] = useState(null) // 'sending' | 'sent' | 'error' | null
+  const [status, setStatus] = useState(null)
 
   function update(field) {
     return (e) => setForm((f) => ({ ...f, [field]: e.target.value }))
@@ -95,9 +136,6 @@ function ContactForm() {
     e.preventDefault()
     setStatus('sending')
 
-    // Por ahora abrimos el cliente de email del usuario con todo prellenado.
-    // Cuando se decida el endpoint real (Formspree, EmailJS, backend propio),
-    // reemplazar este bloque por un fetch al endpoint correspondiente.
     const subject = encodeURIComponent(`Consulta web — ${form.nombre} ${form.apellido}`)
     const body = encodeURIComponent(
       `Nombre: ${form.nombre} ${form.apellido}\n` +

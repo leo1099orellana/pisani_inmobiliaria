@@ -37,4 +37,7 @@ html, body {
 img { display: block; max-width: 100%; }
 
 /* Scroll suave para los anchors del nav */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}

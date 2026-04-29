@@ -22,17 +22,19 @@ export const services = [
   },
 ]
 
-// Features que aparecen en la tarjeta flotante del hero
 export const heroFeatures = [
-  { title: '35 años de experiencia', description: 'Desde 1990 en el mercado.' },
-  { title: 'Cartera curada', description: 'Propiedades seleccionadas.' },
-  { title: 'Matrícula COL 1028', description: 'Respaldo profesional.' },
-  { title: 'Tasación sin cargo', description: 'Evaluación inicial gratuita.' },
+  { title: '15 años de experiencia', description: 'Desde 2011 en el mercado.' },
+  { title: 'Propiedades premium', description: 'Selección exclusiva de propiedades.' },
+  { title: 'Respaldo profesional', description: 'CUCICBA 7047 / CMYCP Quilmes 1028.' },
+  { title: 'Tasación inicial sin cargo', description: 'Evaluación inicial gratuita.' },
+  { title: 'Agentes especializados', description: 'Especialistas en bienes raíces.' },
+  { title: 'Atención personalizada', description: 'Inmobiliaria boutique.' },
 ]
 
 // Stats de la banda oscura "¿Por qué elegirnos?"
+// El tercer item NO tiene número, es solo texto destacado
 export const stats = [
-  { value: '35+', label: 'Años en el mercado' },
-  { value: '500+', label: 'Operaciones concretadas' },
-  { value: '20+', label: 'Propiedades activas' },
+  { value: '15+', label: 'Años en el mercado' },
+  { value: '40+', label: 'Propiedades activas' },
+  { value: '✦', label: 'Inmobiliaria boutique', sublabel: 'Servicio personalizado' },
 ]

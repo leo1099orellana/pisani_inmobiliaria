@@ -9,49 +9,29 @@ export default function Footer() {
     { label: 'Contacto', href: '#contacto' },
   ]
 
+  // Tomamos el primer teléfono como principal en footer
+  const telPrincipal = site.contact.phones[0]
+
   const contactoItems = [
-    {
-      label: site.contact.phone,
-      href: site.contact.whatsappUrl,
-      external: true,
-    },
-    {
-      label: site.contact.email,
-      href: `mailto:${site.contact.email}`,
-    },
-    {
-      label: 'Instagram',
-      href: site.contact.instagramUrl,
-      external: true,
-    },
-    {
-      label: 'Argenprop',
-      href: site.contact.argenpropUrl,
-      external: true,
-    },
-    {
-      label: 'Zonaprop',
-      href: site.contact.zonapropUrl,
-      external: true,
-    },
+    { label: site.contact.email, href: `mailto:${site.contact.email}` },
+    { label: 'Instagram', href: site.contact.instagramUrl, external: true },
+    { label: 'Argenprop', href: site.contact.argenpropUrl, external: true },
+    { label: 'Zonaprop', href: site.contact.zonapropUrl, external: true },
   ]
 
-  const legalItems = [
-    { label: `Matrícula ${site.brand.license}`, href: '#' },
-    { label: 'Política de privacidad', href: '#' },
-    { label: 'Términos', href: '#' },
-    { label: `© ${new Date().getFullYear()}`, href: null }, // sin link, solo texto
+ const legalItems = [
+    ...site.brand.licenses.map((lic) => ({ label: lic, href: null })),
+    { label: `© ${new Date().getFullYear()}`, href: null },
   ]
-
   return (
-    <footer className="bg-dark text-[#e8dfd0] mt-16 px-6 md:px-12 py-12">
-      <div className="grid grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-8 md:gap-10">
+    <footer className="bg-dark text-[#e8dfd0] mt-16 px-6 md:px-10 py-12">
+      <div className="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-8 md:gap-10">
         <div className="col-span-2 md:col-span-1">
-          <div className="bg-white inline-block p-2.5 rounded-xl mb-5">
+          <div className="bg-white inline-block p-5 rounded-2xl mb-5">
             <img
               src="/assets/logo-igpisani.webp"
               alt="I.G. Pisani"
-              className="h-11"
+              className="h-24 md:h-28"
             />
           </div>
           <div className="text-[13px] opacity-65 max-w-[38ch] leading-[1.55]">
@@ -77,8 +57,8 @@ function FooterColumn({ title, items }) {
         {items.map((item) => (
           <li key={item.label}>
             {item.href ? (
-              
-              < a href={item.href}
+              <a
+                href={item.href}
                 target={item.external ? '_blank' : undefined}
                 rel={item.external ? 'noopener noreferrer' : undefined}
                 className="cursor-pointer hover:opacity-100 hover:text-white transition-all"

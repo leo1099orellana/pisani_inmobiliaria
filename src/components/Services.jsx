@@ -1,25 +1,24 @@
-import { useState } from 'react'
-import { site } from '../data/site.js'
-import { services } from '../data/services.js'
+import { useState } from "react";
+import { site } from "../data/site.js";
+import { services } from "../data/services.js";
 
 export default function Services() {
-  const [open, setOpen] = useState(1)
+  const [open, setOpen] = useState(1);
 
   return (
     <section id="servicios" className="px-6 md:px-12 py-16 md:py-20">
+      {" "}
       <div className="text-[13px] text-soft mb-6 tracking-[0.02em]">
         {site.services.eyebrow}
       </div>
-
       <h2 className="font-serif font-normal text-[32px] md:text-4xl lg:text-5xl xl:text-[52px] tracking-[-0.02em] leading-[1.1] mb-12 max-w-[22ch]">
         <span className="text-accent italic">{site.services.titlePrefix}</span>
         {site.services.titleSuffix}
       </h2>
-
       <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-stretch">
         <div className="grid gap-3.5">
           {services.map((s) => {
-            const isOpen = open === s.n
+            const isOpen = open === s.n;
             return (
               <button
                 key={s.n}
@@ -29,7 +28,7 @@ export default function Services() {
               >
                 <div className="flex gap-4 items-start w-full">
                   <div className="w-9 h-9 rounded-lg bg-accent grid place-items-center text-[13px] font-semibold text-white shrink-0">
-                    {String(s.n).padStart(2, '0')}
+                    {String(s.n).padStart(2, "0")}
                   </div>
                   <div className="flex-1">
                     <div className="text-[15px] font-medium">{s.title}</div>
@@ -40,14 +39,14 @@ export default function Services() {
                     )}
                   </div>
                   <span
-                    className={`text-soft text-lg shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-45' : ''}`}
+                    className={`text-soft text-lg shrink-0 transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}
                     aria-hidden
                   >
                     +
                   </span>
                 </div>
               </button>
-            )
+            );
           })}
         </div>
 
@@ -60,5 +59,5 @@ export default function Services() {
         </div>
       </div>
     </section>
-  )
+  );
 }

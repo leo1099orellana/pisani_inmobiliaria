@@ -11,9 +11,12 @@ import Footer from './components/Footer.jsx'
 export default function App() {
   return (
     <div className="bg-bg text-ink min-h-screen">
-      <Nav />
-      <main>
+      <div className="relative">
+        <Nav />
         <Hero />
+      </div>
+
+      <main>
         <About />
         <WhyUs />
         <Properties />
