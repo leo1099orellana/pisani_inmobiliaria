@@ -79,7 +79,7 @@ export default function Properties() {
               {active + 1} / {slides.length}
             </div>
 
-            <div className="absolute left-7 right-7 md:left-10 md:right-10 bottom-7 md:bottom-10 text-white">
+            <div className="absolute left-4 right-4 md:left-10 md:right-10 bottom-7 md:bottom-10 text-white">
               <div className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-[-0.01em] leading-tight mb-2">
                 {current.title}
               </div>

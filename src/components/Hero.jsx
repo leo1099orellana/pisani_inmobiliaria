@@ -21,7 +21,6 @@ export default function Hero() {
             {site.hero.subtitle}
           </p>
           
-          {/* Contenedor de botones con links externos para evitar el loop de localhost */}
           <div className="flex flex-wrap items-center gap-4">
             <a
               href="https://www.argenprop.com" 
