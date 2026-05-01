@@ -8,34 +8,35 @@ export default function Contact() {
         {site.contact_section.eyebrow}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-start">
-        <div>
-          <h2 className="font-serif font-normal text-[32px] md:text-4xl lg:text-5xl xl:text-[52px] tracking-[-0.02em] mb-8 leading-[1.05]">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-start">
+        {/* Columna izquierda */}
+        <div className="flex flex-col gap-8">
+          <h2 className="font-serif font-normal text-[32px] md:text-4xl lg:text-5xl xl:text-[52px] tracking-[-0.02em] leading-[1.05]">
             {site.contact_section.title[0]}<br />{site.contact_section.title[1]}
           </h2>
 
-          {/* Equipo */}
-          <div className="mb-6">
+          {/* Equipo en 3 columnas */}
+          <div>
             <div className="text-xs text-soft tracking-[0.04em] mb-3">WhatsApp</div>
-            <div className="grid grid-cols-1 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {site.about.team.map((member) => (
                 <TeamCard key={member.name} {...member} />
               ))}
             </div>
           </div>
 
-          {/* Contacto directo: Email e Instagram con misma jerarquía visual que el equipo */}
-          <div className="mb-6">
-            <div className="text-xs text-soft tracking-[0.04em] mb-3">Email/Red Social</div>
+          {/* Email + Instagram */}
+          <div>
+            <div className="text-xs text-soft tracking-[0.04em] mb-3">Contacto directo</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <ContactCard
                 label="Email"
                 value={site.contact.email}
                 href={`mailto:${site.contact.email}`}
                 icon={
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M2 4l10 8 10-8" />
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7l9 6 9-6" />
                   </svg>
                 }
               />
@@ -45,29 +46,31 @@ export default function Contact() {
                 href={site.contact.instagramUrl}
                 external
                 icon={
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
                   </svg>
                 }
               />
             </div>
           </div>
 
-          <div className="mt-9">
+          {/* Horario */}
+          <div className="bg-surface border border-line rounded-2xl p-5">
             <div className="text-[13px] font-medium mb-3">Horario de atención</div>
-            <div className="grid grid-cols-[auto_auto] gap-y-1.5 gap-x-10 text-[13px] text-soft">
+            <div className="grid grid-cols-[auto_1fr] gap-y-1.5 gap-x-8 text-[13px] text-soft">
               {site.hours.map((h) => (
                 <div key={h.days} className="contents">
                   <span>{h.days}</span>
-                  <span>{h.time}</span>
+                  <span className="text-right">{h.time}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
+        {/* Columna derecha: form */}
         <ContactForm />
       </div>
     </section>
@@ -76,25 +79,27 @@ export default function Contact() {
 
 function TeamCard({ name, role, phone, wa, avatar }) {
   return (
-    <div className="bg-surface border border-line rounded-2xl p-4 flex items-center gap-3">
-      <div className="w-12 h-12 rounded-full overflow-hidden bg-line shrink-0">
-        <img src={avatar} alt={name} className="w-full h-full object-cover" />
+    <div className="bg-surface border border-line rounded-2xl p-4 flex flex-col gap-3">
+      <div className="flex items-center gap-3">
+        <div className="w-11 h-11 rounded-full overflow-hidden bg-line shrink-0">
+          <img src={avatar} alt={name} className="w-full h-full object-cover" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="text-[13.5px] font-medium leading-tight truncate">{name}</div>
+          <div className="text-[11.5px] text-soft mt-0.5 truncate">{role}</div>
+        </div>
       </div>
-      <div className="flex-1 min-w-0">
-        <div className="text-[14px] font-medium leading-tight">{name}</div>
-        <div className="text-[12px] text-soft mt-0.5">{role}</div>
-        <a
-          href={wa}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[12.5px] text-accent hover:underline mt-1 inline-flex items-center gap-1.5 cursor-pointer"
-        >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.6 6.32A7.85 7.85 0 0012.05 4a7.94 7.94 0 00-6.88 11.89L4 20l4.22-1.11a7.93 7.93 0 003.83.97h.01A7.94 7.94 0 0020 11.93a7.85 7.85 0 00-2.4-5.61zM12.05 18.5h-.01a6.6 6.6 0 01-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 1112.21-3.5 6.6 6.6 0 01-6.61 6.59z" />
-          </svg>
-          {phone}
-        </a>
-      </div>
+      <a
+        href={wa}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[12.5px] text-accent hover:underline inline-flex items-center gap-1.5 cursor-pointer"
+      >
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.6 6.32A7.85 7.85 0 0012.05 4a7.94 7.94 0 00-6.88 11.89L4 20l4.22-1.11a7.93 7.93 0 003.83.97h.01A7.94 7.94 0 0020 11.93a7.85 7.85 0 00-2.4-5.61zM12.05 18.5h-.01a6.6 6.6 0 01-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 1112.21-3.5 6.6 6.6 0 01-6.61 6.59z" />
+        </svg>
+        {phone}
+      </a>
     </div>
   )
 }
@@ -111,8 +116,8 @@ function ContactCard({ label, value, href, external, icon }) {
         {icon}
       </div>
       <div className="flex-1 min-w-0">
-        <div className="text-[11px] text-soft tracking-[0.04em] uppercase">{label}</div>
-        <div className="text-[14px] font-medium truncate group-hover:text-accent transition-colors">{value}</div>
+        <div className="text-[10px] text-soft tracking-[0.04em] uppercase">{label}</div>
+        <div className="text-[13px] font-medium truncate group-hover:text-accent transition-colors">{value}</div>
       </div>
     </a>
   )
@@ -150,7 +155,7 @@ function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-surface rounded-2xl p-6 md:p-8 border border-line"
+      className="bg-surface rounded-2xl p-6 md:p-7 border border-line lg:sticky lg:top-28"
     >
       <div className="text-[13px] font-medium mb-5">
         {site.contact_section.formTitle}
@@ -182,7 +187,7 @@ function ContactForm() {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="mt-5 px-6 py-3.5 rounded-full bg-accent text-white border-none text-sm font-medium cursor-pointer inline-flex items-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-50"
+        className="mt-5 px-6 py-3.5 rounded-full bg-accent text-white border-none text-sm font-medium cursor-pointer inline-flex items-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-50 w-full sm:w-auto justify-center"
       >
         {status === 'sending' ? 'Enviando…' : 'Enviar mensaje →'}
       </button>
