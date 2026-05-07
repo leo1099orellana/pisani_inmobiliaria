@@ -32,7 +32,6 @@ export default function Nav() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  const pillBase = 'rounded-full transition-all duration-300'
   const pillBg = scrolled
     ? 'bg-[#f4f4f2] shadow-xl ring-1 ring-black/5'
     : 'bg-[#f4f4f2]/90 backdrop-blur-md shadow-lg'
@@ -48,8 +47,9 @@ export default function Nav() {
         hidden ? '-translate-y-full opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'
       }`}
     >
-      <div className="hidden md:flex justify-center items-center gap-3">
-        <nav className={`${pillBase} ${pillBg} flex items-center gap-1 pl-2.5 pr-7 py-2.5`}>
+      {/* Desktop: una sola pill grande con todo */}
+      <div className="hidden md:flex justify-center">
+        <nav className={`${pillBg} rounded-full transition-all duration-300 flex items-center gap-1 pl-2.5 pr-2.5 py-2`}>
           <a
             href="#"
             className="flex items-center pr-3"
@@ -101,14 +101,11 @@ export default function Nav() {
                       onClick={() => setPropsOpen(false)}
                       className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#ff5722]/10 transition-colors cursor-pointer group/item"
                     >
-                      <span className="w-9 h-9 rounded-lg bg-[#c2613f] grid place-items-center text-white font-bold text-[14px] shrink-0">A</span>
+                      <span className="w-9 h-9 rounded-lg bg-[#ff5722] grid place-items-center text-white font-bold text-[14px] shrink-0">A</span>
                       <span className="flex-1 min-w-0">
                         <span className="block text-[14px] font-medium leading-tight">Argenprop</span>
                         <span className="block text-[11.5px] text-soft mt-0.5">Cartera publicada en Argenprop</span>
                       </span>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-soft opacity-0 group-hover/item:opacity-100 transition-opacity shrink-0">
-                        <path d="M7 17L17 7M7 7h10v10" />
-                      </svg>
                     </a>
                     <a
                       href={site.contact.zonapropUrl}
@@ -117,14 +114,11 @@ export default function Nav() {
                       onClick={() => setPropsOpen(false)}
                       className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#fff200]/30 transition-colors cursor-pointer group/item"
                     >
-                      <span className="w-9 h-9 rounded-lg  bg-[#d4a73a] grid place-items-center text-ink font-bold text-[14px] shrink-0">Z</span>
+                      <span className="w-9 h-9 rounded-lg bg-[#fff200] grid place-items-center text-ink font-bold text-[14px] shrink-0">Z</span>
                       <span className="flex-1 min-w-0">
                         <span className="block text-[14px] font-medium leading-tight">Zonaprop</span>
                         <span className="block text-[11.5px] text-soft mt-0.5">Cartera publicada en Zonaprop</span>
                       </span>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-soft opacity-0 group-hover/item:opacity-100 transition-opacity shrink-0">
-                        <path d="M7 17L17 7M7 7h10v10" />
-                      </svg>
                     </a>
                   </div>
                 </div>
@@ -141,31 +135,33 @@ export default function Nav() {
               </a>
             ))}
           </div>
-        </nav>
 
-        <a
-          href="#contacto"
-          className={`${pillBase} ${pillBg} group px-6 py-3.5 text-[14px] font-medium text-ink hover:bg-accent hover:text-white inline-flex items-center gap-2`}
-        >
-          Contactanos
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="transition-transform group-hover:translate-x-0.5"
+          {/* Botón Contactanos integrado en la misma pill */}
+          <a
+            href="#contacto"
+            className="ml-5 group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-white text-[13px] font-medium hover:opacity-90 transition-opacity"
           >
-            <path d="M5 12h14M13 5l7 7-7 7" />
-          </svg>
-        </a>
+            Contactanos
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="transition-transform group-hover:translate-x-0.5"
+            >
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </a>
+        </nav>
       </div>
 
+      {/* Mobile */}
       <div className="md:hidden flex items-center justify-between">
         <a
           href="#"
-          className={`${pillBase} ${pillBg} px-4 py-2.5 flex items-center`}
+          className={`${pillBg} rounded-full transition-all duration-300 px-4 py-2.5 flex items-center`}
           aria-label="I.G. Pisani — Inicio"
         >
           <img
@@ -177,7 +173,7 @@ export default function Nav() {
 
         <button
           onClick={() => setOpen((o) => !o)}
-          className={`${pillBase} ${pillBg} p-3 cursor-pointer`}
+          className={`${pillBg} rounded-full transition-all duration-300 p-3 cursor-pointer`}
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={open}
         >
@@ -189,7 +185,7 @@ export default function Nav() {
 
       {open && (
         <div className="md:hidden absolute top-20 left-4 right-4 bg-[#f4f4f2] rounded-2xl shadow-xl p-4 flex flex-col gap-1">
-          <div className="py-2 px-3 text-soft text-[11px] tracking-[0.12em] uppercase">
+          <div className="py-3 px-3 text-soft text-[13px] tracking-[0.04em] uppercase">
             Propiedades
           </div>
           <a

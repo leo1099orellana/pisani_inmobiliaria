@@ -7,6 +7,7 @@ import Services from './components/Services.jsx'
 import CTA from './components/CTA.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
+import Team from './components/Team.jsx'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <About />
         <WhyUs />
         <Properties />
+        <Team />
         <Services />
         <CTA />
         <Contact />
