@@ -11,7 +11,7 @@ export const site = {
   },
 
   contact: {
-    email: 'hola@igpisani.com.ar',
+    email: 'gerardo@igpisani.com.ar',
     instagram: '@i.g.pisani',
     instagramUrl: 'https://instagram.com/i.g.pisani',
     argenpropUrl: 'https://www.argenprop.com/inmobiliaria/ig-pisani',
