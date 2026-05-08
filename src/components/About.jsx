@@ -9,7 +9,7 @@ export default function About() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
         <div>
-          <h2 className="font-sans font-normal tracking-[-0.02em] text-[36px] md:text-5xl lg:text-[52px] leading-[1.05] mb-7">
+          <h2 className="font-sans font-sans tracking-[-0.02em] text-[36px] md:text-5xl lg:text-[52px] leading-[1.05] mb-7">
             {" "}
             {site.about.title.map((line, i) => (
               <span key={i}>

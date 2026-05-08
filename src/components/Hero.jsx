@@ -49,7 +49,7 @@ export default function Hero() {
         </div>
 
         <aside className="w-full lg:w-[19rem] xl:w-80 bg-black/75 backdrop-blur-xl border border-white/15 rounded-2xl p-5 md:p-6 text-white flex flex-col gap-3.5 shadow-2xl shrink-0">
-          <div className="font-serif text-[20px] tracking-[-0.01em]">
+          <div className="font-sans text-[20px] tracking-[-0.01em]">
             Por qué elegirnos
           </div>
           <div className="h-px bg-white/15" />
@@ -61,7 +61,7 @@ export default function Hero() {
                 </svg>
               </span>
               <div>
-                <div className="text-[13.5px] font-medium leading-[1.3]">{f.title}</div>
+                <div className="text-[13.5px] font-sans leading-[1.3]">{f.title}</div>
                 <div className="text-[11.5px] opacity-65 mt-0.5 leading-[1.4]">{f.description}</div>
               </div>
             </div>

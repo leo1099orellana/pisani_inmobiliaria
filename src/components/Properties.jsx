@@ -59,7 +59,7 @@ export default function Properties() {
       <div className="text-[13px] text-soft mb-3 tracking-[0.02em]">
         {site.properties.eyebrow}
       </div>
-      <h2 className="font-serif font-normal text-[36px] md:text-5xl lg:text-[52px] tracking-[-0.02em] leading-[1.05] max-w-[18ch] mb-10 md:mb-12">
+      <h2 className="font-sans font-normal text-[36px] md:text-5xl lg:text-[52px] tracking-[-0.02em] leading-[1.05] max-w-[18ch] mb-10 md:mb-12">
         {site.properties.title}
       </h2>
 
@@ -80,7 +80,7 @@ export default function Properties() {
             </div>
 
             <div className="absolute left-5 right-5 md:left-8 md:right-8 lg:left-10 lg:right-10 bottom-5 md:bottom-8 lg:bottom-10 text-white">
-              <div className="font-serif text-[22px] sm:text-3xl md:text-4xl lg:text-5xl tracking-[-0.01em] leading-tight mb-1.5">
+              <div className="font-sans text-[22px] sm:text-3xl md:text-4xl lg:text-5xl tracking-[-0.01em] leading-tight mb-1.5">
                 {current.title}
               </div>
               <div className="text-[12px] md:text-[14px] opacity-85 mb-4 md:mb-5">

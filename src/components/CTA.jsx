@@ -15,7 +15,7 @@ export default function CTA() {
           <div className="text-[13px] opacity-75 mb-3.5 tracking-[0.02em]">
             {site.cta.eyebrow}
           </div>
-          <h2 className="font-serif font-normal text-4xl md:text-5xl lg:text-6xl xl:text-[80px] tracking-[-0.025em] mb-7 leading-none">
+          <h2 className="font-sans font-sans text-4xl md:text-5xl lg:text-6xl xl:text-[80px] tracking-[-0.025em] mb-7 leading-none">
             {site.cta.titleStart}{' '}
             <em className="text-accent">{site.cta.titleEnd}</em>
           </h2>

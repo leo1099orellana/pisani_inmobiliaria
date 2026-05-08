@@ -61,7 +61,7 @@ export default function Nav() {
               className="h-11 w-auto"
             />
           </a>
-          <div className="flex gap-7 text-[14px] font-medium text-ink pl-4 border-l border-black/10 items-center">
+          <div className="flex gap-7 text-[14px] font-sans text-ink pl-4 border-l border-black/10 items-center">
             <div
               ref={propsRef}
               className="relative"
@@ -91,7 +91,7 @@ export default function Nav() {
               {propsOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-72">
                   <div className="bg-[#f4f4f2] rounded-2xl shadow-2xl ring-1 ring-black/5 overflow-hidden p-2">
-                    <div className="px-3 py-2 text-[10px] tracking-[0.12em] uppercase text-soft">
+                    <div className="px-3 py-2 text-[10px] tracking-[0.12em] font-sans text-soft">
                       Portales asociados
                     </div>
                     <a
@@ -101,9 +101,9 @@ export default function Nav() {
                       onClick={() => setPropsOpen(false)}
                       className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#ff5722]/10 transition-colors cursor-pointer group/item"
                     >
-                      <span className="w-9 h-9 rounded-lg bg-[#ff5722] grid place-items-center text-white font-bold text-[14px] shrink-0">A</span>
+                      <span className="w-9 h-9 rounded-lg bg-[#ff5722] grid place-items-center text-white font-sans text-[14px] shrink-0">A</span>
                       <span className="flex-1 min-w-0">
-                        <span className="block text-[14px] font-medium leading-tight">Argenprop</span>
+                        <span className="block text-[14px] font-sans leading-tight">Argenprop</span>
                         <span className="block text-[11.5px] text-soft mt-0.5">Cartera publicada en Argenprop</span>
                       </span>
                     </a>
@@ -114,9 +114,9 @@ export default function Nav() {
                       onClick={() => setPropsOpen(false)}
                       className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#fff200]/30 transition-colors cursor-pointer group/item"
                     >
-                      <span className="w-9 h-9 rounded-lg bg-[#fff200] grid place-items-center text-ink font-bold text-[14px] shrink-0">Z</span>
+                      <span className="w-9 h-9 rounded-lg bg-[#fff200] grid place-items-center text-ink font-sans text-[14px] shrink-0">Z</span>
                       <span className="flex-1 min-w-0">
-                        <span className="block text-[14px] font-medium leading-tight">Zonaprop</span>
+                        <span className="block text-[14px] font-sans leading-tight">Zonaprop</span>
                         <span className="block text-[11.5px] text-soft mt-0.5">Cartera publicada en Zonaprop</span>
                       </span>
                     </a>
@@ -139,7 +139,7 @@ export default function Nav() {
           {/* Botón Contactanos integrado en la misma pill */}
           <a
             href="#contacto"
-            className="ml-5 group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-white text-[13px] font-medium hover:opacity-90 transition-opacity"
+            className="ml-5 group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-white text-[13px] font-sans hover:opacity-90 transition-opacity"
           >
             Contactanos
             <svg
@@ -185,7 +185,7 @@ export default function Nav() {
 
       {open && (
         <div className="md:hidden absolute top-20 left-4 right-4 bg-[#f4f4f2] rounded-2xl shadow-xl p-4 flex flex-col gap-1">
-          <div className="py-3 px-3 text-soft text-[13px] tracking-[0.04em] uppercase">
+          <div className="py-3 px-3 text-soft text-[13px] tracking-[0.04em] font-sans">
             Propiedades
           </div>
           <a
@@ -195,7 +195,7 @@ export default function Nav() {
             onClick={() => setOpen(false)}
             className="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-black/5 transition-colors"
           >
-            <span className="w-8 h-8 rounded-lg bg-[#ff5722] grid place-items-center text-white font-bold text-[13px] shrink-0">A</span>
+            <span className="w-8 h-8 rounded-lg bg-[#ff5722] grid place-items-center text-white font-sans text-[13px] shrink-0">A</span>
             <span className="text-[15px]">Argenprop</span>
           </a>
           <a
@@ -205,7 +205,7 @@ export default function Nav() {
             onClick={() => setOpen(false)}
             className="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-black/5 transition-colors"
           >
-            <span className="w-8 h-8 rounded-lg bg-[#fff200] grid place-items-center text-ink font-bold text-[13px] shrink-0">Z</span>
+            <span className="w-8 h-8 rounded-lg bg-[#fff200] grid place-items-center text-ink font-sans text-[13px] shrink-0">Z</span>
             <span className="text-[15px]">Zonaprop</span>
           </a>
 
@@ -224,7 +224,7 @@ export default function Nav() {
           <a
             href="#contacto"
             onClick={() => setOpen(false)}
-            className="px-5 py-3 rounded-full bg-accent text-white text-[14px] font-medium text-center mt-2"
+            className="px-5 py-3 rounded-full bg-accent text-white text-[14px] font-sans text-center mt-2"
           >
             Contactanos
           </a>
