@@ -99,9 +99,11 @@ export default function Nav() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setPropsOpen(false)}
-                      className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#ff5722]/10 transition-colors cursor-pointer group/item"
+                      className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#70B32D]/10 transition-colors cursor-pointer group/item"
                     >
-                      <span className="w-9 h-9 rounded-lg bg-[#ff5722] grid place-items-center text-white font-sans text-[14px] shrink-0">A</span>
+                      <span className="w-9 h-9 rounded-lg bg-white ring-1 ring-black/10 grid place-items-center shrink-0 overflow-hidden">
+                        <img src="https://www.google.com/s2/favicons?domain=argenprop.com&sz=64" alt="" className="w-6 h-6 object-contain" />
+                      </span>
                       <span className="flex-1 min-w-0">
                         <span className="block text-[14px] font-sans leading-tight">Argenprop</span>
                         <span className="block text-[11.5px] text-soft mt-0.5">Cartera publicada en Argenprop</span>
@@ -112,9 +114,11 @@ export default function Nav() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setPropsOpen(false)}
-                      className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#fff200]/30 transition-colors cursor-pointer group/item"
+                      className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#FF4C00]/10 transition-colors cursor-pointer group/item"
                     >
-                      <span className="w-9 h-9 rounded-lg bg-[#fff200] grid place-items-center text-ink font-sans text-[14px] shrink-0">Z</span>
+                      <span className="w-9 h-9 rounded-lg bg-white ring-1 ring-black/10 grid place-items-center shrink-0 overflow-hidden">
+                        <img src="https://www.google.com/s2/favicons?domain=zonaprop.com.ar&sz=64" alt="" className="w-6 h-6 object-contain" />
+                      </span>
                       <span className="flex-1 min-w-0">
                         <span className="block text-[14px] font-sans leading-tight">Zonaprop</span>
                         <span className="block text-[11.5px] text-soft mt-0.5">Cartera publicada en Zonaprop</span>
@@ -173,13 +177,15 @@ export default function Nav() {
 
         <button
           onClick={() => setOpen((o) => !o)}
-          className={`${pillBg} rounded-full transition-all duration-300 p-3 cursor-pointer`}
+          className={`${pillBg} rounded-full transition-all duration-300 h-15 px-5 flex items-center justify-center cursor-pointer`}
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={open}
         >
-          <span className={`block w-5 h-0.5 bg-ink transition-transform ${open ? 'translate-y-1.5 rotate-45' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-ink mt-1 transition-opacity ${open ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-ink mt-1 transition-transform ${open ? '-translate-y-1.5 -rotate-45' : ''}`} />
+          <div>
+            <span className={`block w-5 h-0.5 bg-ink transition-transform ${open ? 'translate-y-1.5 rotate-45' : ''}`} />
+            <span className={`block w-5 h-0.5 bg-ink mt-1 transition-opacity ${open ? 'opacity-0' : ''}`} />
+            <span className={`block w-5 h-0.5 bg-ink mt-1 transition-transform ${open ? '-translate-y-1.5 -rotate-45' : ''}`} />
+          </div>
         </button>
       </div>
 
@@ -195,7 +201,9 @@ export default function Nav() {
             onClick={() => setOpen(false)}
             className="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-black/5 transition-colors"
           >
-            <span className="w-8 h-8 rounded-lg bg-[#ff5722] grid place-items-center text-white font-sans text-[13px] shrink-0">A</span>
+            <span className="w-8 h-8 rounded-lg bg-white ring-1 ring-black/10 grid place-items-center shrink-0 overflow-hidden">
+              <img src="https://www.google.com/s2/favicons?domain=argenprop.com&sz=64" alt="" className="w-5 h-5 object-contain" />
+            </span>
             <span className="text-[15px]">Argenprop</span>
           </a>
           <a
@@ -205,7 +213,9 @@ export default function Nav() {
             onClick={() => setOpen(false)}
             className="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-black/5 transition-colors"
           >
-            <span className="w-8 h-8 rounded-lg bg-[#fff200] grid place-items-center text-ink font-sans text-[13px] shrink-0">Z</span>
+            <span className="w-8 h-8 rounded-lg bg-white ring-1 ring-black/10 grid place-items-center shrink-0 overflow-hidden">
+              <img src="https://www.google.com/s2/favicons?domain=zonaprop.com.ar&sz=64" alt="" className="w-5 h-5 object-contain" />
+            </span>
             <span className="text-[15px]">Zonaprop</span>
           </a>
 

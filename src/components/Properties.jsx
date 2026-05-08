@@ -92,10 +92,10 @@ export default function Properties() {
                   href={site.contact.argenpropUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#c2613f] text-white text-[12px] md:text-[13px] font-medium hover:bg-[#a8512f] transition-colors cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#70B32D] text-white text-[12px] md:text-[13px] font-medium hover:bg-[#5A9225] transition-colors cursor-pointer"
                 >
-                  <span className="w-5 h-5 rounded bg-white/20 grid place-items-center font-bold text-[10px]">
-                    A
+                  <span className="w-5 h-5 rounded bg-white/20 grid place-items-center overflow-hidden">
+                    <img src="https://www.google.com/s2/favicons?domain=argenprop.com&sz=32" alt="" className="w-4 h-4 object-contain" />
                   </span>
                   Ver en Argenprop
                   <svg
@@ -113,10 +113,10 @@ export default function Properties() {
                   href={site.contact.zonapropUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#d4a73a] text-white text-[12px] md:text-[13px] font-medium hover:bg-[#b8902f] transition-colors cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#FF4C00] text-white text-[12px] md:text-[13px] font-medium hover:bg-[#E03D00] transition-colors cursor-pointer"
                 >
-                  <span className="w-5 h-5 rounded bg-white/20 grid place-items-center font-bold text-[10px]">
-                    Z
+                  <span className="w-5 h-5 rounded bg-white grid place-items-center overflow-hidden">
+                    <img src="https://www.google.com/s2/favicons?domain=zonaprop.com.ar&sz=32" alt="" className="w-4 h-4 object-contain" />
                   </span>
                   Ver en Zonaprop
                   <svg
@@ -137,7 +137,7 @@ export default function Properties() {
           <button
             onClick={goToPrev}
             aria-label="Anterior"
-            className="absolute left-2 md:-left-5 top-[30%] md:top-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 rounded-full bg-white shadow-xl ring-1 ring-black/5 grid place-items-center cursor-pointer hover:bg-bg hover:scale-110 transition-all z-10"
+            className="absolute left-2 md:-left-5 top-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 rounded-full bg-white shadow-xl ring-1 ring-black/5 grid place-items-center cursor-pointer hover:bg-bg hover:scale-110 transition-all z-10"
           >
             <svg
               width="14"
@@ -154,7 +154,7 @@ export default function Properties() {
           <button
             onClick={goToNext}
             aria-label="Siguiente"
-            className="absolute right-2 md:-right-5 top-[30%] md:top-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 rounded-full bg-white shadow-xl ring-1 ring-black/5 grid place-items-center cursor-pointer hover:bg-bg hover:scale-110 transition-all z-10"
+            className="absolute right-2 md:-right-5 top-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 rounded-full bg-white shadow-xl ring-1 ring-black/5 grid place-items-center cursor-pointer hover:bg-bg hover:scale-110 transition-all z-10"
           >
             <svg
               width="14"
