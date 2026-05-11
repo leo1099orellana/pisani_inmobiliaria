@@ -7,36 +7,48 @@ const slides = [
     title: "Las Cañitas",
     subtitle: "Depto · 2 dorm · 69 m² · Amoblado",
     image: "/assets/propiedades/las-canitas.jpg",
+    argenpropUrl: null,
+    zonapropUrl: null,
   },
   {
     id: "puerto-madero",
     title: "Puerto Madero",
     subtitle: "Depto · 2 amb · 45 m² + cochera",
     image: "/assets/propiedades/puerto-madero.jpg",
+    argenpropUrl: "https://www.argenprop.com/departamento-en-venta-en-puerto-madero-2-ambientes--19558883",
+    zonapropUrl: null,
   },
   {
     id: "greenville",
     title: "Greenville Polo & Resort",
     subtitle: "Lote · 767 m²",
     image: "/assets/propiedades/greenville.jpg",
+    argenpropUrl: "https://www.argenprop.com/terreno-en-venta-en-greenville-polo-and-resort--18889259",
+    zonapropUrl: "https://www.zonaprop.com.ar/propiedades/clasificado/vecltrin-excelente-lote-en-venta-en-greenville-polo-resort-58153157.html?n_src=Listado&n_pg=1&n_pos=1",
   },
   {
     id: "fincas-de-iraola",
     title: "Fincas de Iraola II",
     subtitle: "Casa · 3 dorm + playroom · 217 m² construidos",
     image: "/assets/propiedades/fincas-de-iraola.jpg",
+    argenpropUrl: "https://www.argenprop.com/casa-en-venta-en-fincas-de-iraola-ii-6-ambientes--16421911",
+    zonapropUrl: null,
   },
   {
     id: "el-carmen",
     title: "Country El Carmen",
     subtitle: "Casa · 5 dorm · 430 m² construidos",
     image: "/assets/propiedades/el-carmen.jpg",
+    argenpropUrl: "https://www.argenprop.com/casa-en-venta-en-club-el-carmen-7-ambientes--16216273",
+    zonapropUrl: "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-country-club-el-carmen-50587313.html?n_src=Listado&n_pg=1&n_pos=10",
   },
   {
     id: "abril",
     title: "Country Abril",
     subtitle: "Casa · 550 m² cubiertos · 2.100 m² lote",
     image: "/assets/propiedades/abril.jpg",
+    argenpropUrl: "https://www.argenprop.com/casa-en-venta-en-abril-club-de-campo-5-ambientes--19344453",
+    zonapropUrl: "https://www.zonaprop.com.ar/propiedades/clasificado/veclcain-abril-club-de-campo-increible-casona-de-estilo-2-lotes-58681425.html?n_src=Listado&n_pg=1&n_pos=3",
   },
 ];
 
@@ -88,50 +100,42 @@ export default function Properties() {
                 {current.subtitle}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                <a
-                  href={site.contact.argenpropUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#70B32D] text-white text-[12px] md:text-[13px] font-medium hover:bg-[#5A9225] transition-colors cursor-pointer"
-                >
-                  <span className="w-5 h-5 rounded bg-white/20 grid place-items-center overflow-hidden">
-                    <img src="https://www.google.com/s2/favicons?domain=argenprop.com&sz=32" alt="" className="w-4 h-4 object-contain" />
-                  </span>
-                  Ver en Argenprop
-                  <svg
-                    width="11"
-                    height="11"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.2"
-                  >
-                    <path d="M7 17L17 7M7 7h10v10" />
-                  </svg>
-                </a>
-                <a
-                  href={site.contact.zonapropUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#FF4C00] text-white text-[12px] md:text-[13px] font-medium hover:bg-[#E03D00] transition-colors cursor-pointer"
-                >
-                  <span className="w-5 h-5 rounded bg-white grid place-items-center overflow-hidden">
-                    <img src="https://www.google.com/s2/favicons?domain=zonaprop.com.ar&sz=32" alt="" className="w-4 h-4 object-contain" />
-                  </span>
-                  Ver en Zonaprop
-                  <svg
-                    width="11"
-                    height="11"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.2"
-                  >
-                    <path d="M7 17L17 7M7 7h10v10" />
-                  </svg>
-                </a>
-              </div>
+              {(current.argenpropUrl || current.zonapropUrl) && (
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                  {current.argenpropUrl && (
+                    <a
+                      href={current.argenpropUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#70B32D] text-white text-[12px] md:text-[13px] font-medium hover:bg-[#5A9225] transition-colors cursor-pointer"
+                    >
+                      <span className="w-5 h-5 rounded bg-white/20 grid place-items-center overflow-hidden">
+                        <img src="https://www.google.com/s2/favicons?domain=argenprop.com&sz=32" alt="" className="w-4 h-4 object-contain" />
+                      </span>
+                      Ver en Argenprop
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                        <path d="M7 17L17 7M7 7h10v10" />
+                      </svg>
+                    </a>
+                  )}
+                  {current.zonapropUrl && (
+                    <a
+                      href={current.zonapropUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#FF4C00] text-white text-[12px] md:text-[13px] font-medium hover:bg-[#E03D00] transition-colors cursor-pointer"
+                    >
+                      <span className="w-5 h-5 rounded bg-white grid place-items-center overflow-hidden">
+                        <img src="https://www.google.com/s2/favicons?domain=zonaprop.com.ar&sz=32" alt="" className="w-4 h-4 object-contain" />
+                      </span>
+                      Ver en Zonaprop
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                        <path d="M7 17L17 7M7 7h10v10" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </div>
 
