@@ -19,16 +19,12 @@ export default function Team() {
   )
 }
 
-function TeamCard({ name, role, wa, avatar }) {
+function TeamCard({ name, role, wa }) {
   return (
-<div className="bg-surface border border-line rounded-2xl p-5 flex flex-col gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">      <div className="flex items-center gap-3">
-        <div className="w-14 h-14 rounded-full overflow-hidden bg-line shrink-0">
-          <img src={avatar} alt={name} className="w-full h-full object-cover" />
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="text-[15px] font-sans leading-tight">{name}</div>
-          <div className="text-[12px] text-soft mt-0.5">{role}</div>
-        </div>
+    <div className="bg-surface border border-line rounded-2xl p-5 flex flex-col gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div>
+        <div className="text-[15px] font-sans leading-tight">{name}</div>
+        <div className="text-[12px] text-soft mt-0.5">{role}</div>
       </div>
       <a
         href={wa}

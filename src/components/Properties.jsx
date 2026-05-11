@@ -3,39 +3,40 @@ import { site } from "../data/site.js";
 
 const slides = [
   {
-    id: "abril",
-    title: "Abril Club de Campo",
-    subtitle: "Casa · 4 dorm · 395 m²",
-    image:
-      "https://images.unsplash.com/photo-1613977257365-aaae5a9817ff?auto=format&fit=crop&w=1600&q=75",
+    id: "las-canitas",
+    title: "Las Cañitas",
+    subtitle: "Depto · 2 dorm · 69 m² · Amoblado",
+    image: "/assets/propiedades/las-canitas.jpg",
   },
   {
-    id: "el-carmen",
-    title: "Country El Carmen",
-    subtitle: "Casa · 4 dorm · 300 m²",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=75",
+    id: "puerto-madero",
+    title: "Puerto Madero",
+    subtitle: "Depto · 2 amb · 45 m² + cochera",
+    image: "/assets/propiedades/puerto-madero.jpg",
   },
   {
     id: "greenville",
     title: "Greenville Polo & Resort",
-    subtitle: "Terreno · 767 m²",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=75",
+    subtitle: "Lote · 767 m²",
+    image: "/assets/propiedades/greenville.jpg",
   },
   {
-    id: "fincas",
-    title: "Fincas de Iraola",
-    subtitle: "Lotes y casas",
-    image:
-      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=75",
+    id: "fincas-de-iraola",
+    title: "Fincas de Iraola II",
+    subtitle: "Casa · 3 dorm + playroom · 217 m² construidos",
+    image: "/assets/propiedades/fincas-de-iraola.jpg",
   },
   {
-    id: "campos-roca",
-    title: "Campos de Roca",
-    subtitle: "Country · Berazategui",
-    image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=75",
+    id: "el-carmen",
+    title: "Country El Carmen",
+    subtitle: "Casa · 5 dorm · 430 m² construidos",
+    image: "/assets/propiedades/el-carmen.jpg",
+  },
+  {
+    id: "abril",
+    title: "Country Abril",
+    subtitle: "Casa · 550 m² cubiertos · 2.100 m² lote",
+    image: "/assets/propiedades/abril.jpg",
   },
 ];
 
@@ -170,7 +171,7 @@ export default function Properties() {
           </button>
         </div>
         <div className="mt-4 md:mt-5">
-          <div className="grid grid-cols-5 gap-1.5 md:gap-3">
+          <div className="grid grid-cols-6 gap-1.5 md:gap-3">
             {slides.map((s, i) => (
               <button
                 key={s.id}

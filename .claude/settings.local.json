@@ -8,7 +8,8 @@
       "WebFetch(domain:www.zonaprop.com.ar)",
       "WebFetch(domain:brandfetch.com)",
       "WebFetch(domain:www.behance.net)",
-      "WebFetch(domain:zonaprop.com.ar)"
+      "WebFetch(domain:zonaprop.com.ar)",
+      "Bash(dir \"c:\\\\Users\\\\Leone\\\\Downloads\\\\pisani_inmobiliaria\\\\pisani_inmobiliaria\\\\public\\\\assets\\\\propiedades\")"
     ]
   }
 }

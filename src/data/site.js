@@ -14,8 +14,8 @@ export const site = {
     email: 'gerardo@igpisani.com.ar',
     instagram: '@i.g.pisani',
     instagramUrl: 'https://instagram.com/i.g.pisani',
-    argenpropUrl: 'https://www.argenprop.com/inmobiliaria/ig-pisani',
-    zonapropUrl: 'https://www.zonaprop.com.ar/inmobiliarias/ig-pisani',
+    argenpropUrl: 'https://www.argenprop.com/inmobiliarias/ig-pisani',
+    zonapropUrl: 'https://www.zonaprop.com.ar/inmobiliarias/i.g.-pisani_17634930-inmuebles.html',
 
     // Lista de teléfonos / WhatsApp del equipo
     phones: [
@@ -49,21 +49,18 @@ export const site = {
         role: 'Asesor inmobiliario',
         phone: '+54 9 11 5041 4103',
         wa: 'https://wa.me/541150414103',
-        avatar: 'https://i.pravatar.cc/120?img=11',
       },
       {
         name: 'Maria Tobio',
         role: 'Asesora inmobiliaria',
         phone: '+54 9 11 6926 4217',
         wa: 'https://wa.me/541169264217',
-        avatar: 'https://i.pravatar.cc/120?img=44',
       },
       {
         name: 'Gabriela Ceccarini',
         role: 'Asesora inmobiliaria',
         phone: '+54 11 4413 1008',
         wa: 'https://wa.me/541144131008',
-        avatar: 'https://i.pravatar.cc/120?img=45',
       },
     ],
   },
