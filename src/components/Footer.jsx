@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="col-span-2 md:col-span-1">
           <div className="bg-white inline-block p-5 rounded-2xl mb-5">
             <img
-              src="/assets/logo-igpisani.webp"
+              src="/assets/logo-igpisani.png"
               alt="I.G. Pisani"
               className="h-24 md:h-28"
             />

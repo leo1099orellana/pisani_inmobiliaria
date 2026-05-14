@@ -72,7 +72,7 @@ export const site = {
   // La sección "Propiedades destacadas" ahora redirige a los portales
   properties: {
     eyebrow: 'Propiedades',
-    title: 'Conocé nuestra cartera completa.',
+    title: 'Conocé alguna de nuestras propiedades.',
     subtitle: 'Publicamos todas nuestras propiedades activas en los portales líderes del país. Elegí dónde preferís buscar.',
   },
 

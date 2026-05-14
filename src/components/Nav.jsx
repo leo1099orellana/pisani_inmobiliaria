@@ -56,7 +56,7 @@ export default function Nav() {
             aria-label="I.G. Pisani — Inicio"
           >
             <img
-              src="/assets/logo-igpisani.webp"
+              src="/assets/logo-igpisani.png"
               alt="I.G. Pisani"
               className="h-11 w-auto"
             />
@@ -169,7 +169,7 @@ export default function Nav() {
           aria-label="I.G. Pisani — Inicio"
         >
           <img
-            src="/assets/logo-igpisani.webp"
+            src="/assets/logo-igpisani.png"
             alt="I.G. Pisani"
             className="h-10 w-auto"
           />
